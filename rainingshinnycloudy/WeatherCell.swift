@@ -1,0 +1,28 @@
+//
+//  WeatherCell.swift
+//  rainingshinnycloudy
+//
+//  Created by Ping Li on 2017-01-07.
+//  Copyright © 2017 Ping Li. All rights reserved.
+//
+
+import UIKit
+
+class WeatherCell: UITableViewCell {
+
+    @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var weatherType: UILabel!
+    @IBOutlet weak var highTemp: UILabel!
+    @IBOutlet weak var lowTemp: UILabel!
+    
+    //ViewCell for weather forecast data
+    func configureCell(forecast: Forecast){
+        lowTemp.text = "\(forecast.lowTemp)"
+        highTemp.text = "\(forecast.highTemp)"
+        weatherType.text = forecast.weatherType
+        dayLabel.text = forecast.date
+        weatherIcon.image = UIImage(named: forecast.weatherType)
+    }
+
+}
